@@ -1,0 +1,58 @@
+
+<style>
+
+
+  #MainContent {
+    width: 664px;
+    float: left;
+    padding-left: 200px;
+    margin: 0px;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mat-raised-button {
+    background-color: firebrick;
+    font-style: normal;
+    font-size: 12pt;
+    font-family: Tahoma;
+    color: ivory;
+  }
+</style>
+
+<form class="example-form">
+
+
+  <div class="center">
+    <div id="MainContent">
+      <label>E-Posta: </label>
+
+      <mat-form-field class="example-full-width">
+        <input matInput type="text">
+      </mat-form-field>
+      <br />
+      <label>Şifre:</label>
+
+      <mat-form-field class="example-full-width">
+        <input matInput type="text">
+      </mat-form-field>
+      <div class="example-button-row">
+
+        <button mat-raised-button (click)="login()">Login</button>
+        <button mat-raised-button routerLink="/Home">Cancel</button>
+
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+
+
+</form>
