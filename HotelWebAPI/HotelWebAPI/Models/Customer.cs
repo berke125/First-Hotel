@@ -14,8 +14,9 @@ namespace HotelWebAPI.Models
     
     public partial class Customer
     {
-        public string Adı_Soyadı { get; set; }
-        public string EMailAddress { get; set; }
+        public int Id { get; set; }
+        public string NameSurname { get; set; }
+        public string EMail { get; set; }
         public string Password { get; set; }
     }
 }

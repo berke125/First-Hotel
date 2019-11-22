@@ -175,22 +175,22 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs">
-      <DependentUpon>CustomerDBModel.tt</DependentUpon>
+      <DependentUpon>HotelDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CustomerDBModel.Context.cs">
+    <Compile Include="Models\HotelDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CustomerDBModel.Context.tt</DependentUpon>
+      <DependentUpon>HotelDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CustomerDBModel.cs">
+    <Compile Include="Models\HotelDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CustomerDBModel.tt</DependentUpon>
+      <DependentUpon>HotelDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CustomerDBModel.Designer.cs">
+    <Compile Include="Models\HotelDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CustomerDBModel.edmx</DependentUpon>
+      <DependentUpon>HotelDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -203,15 +203,15 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\CustomerDBModel.Context.tt">
+    <Content Include="Models\HotelDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CustomerDBModel.Context.cs</LastGenOutput>
-      <DependentUpon>CustomerDBModel.edmx</DependentUpon>
+      <DependentUpon>HotelDB.edmx</DependentUpon>
+      <LastGenOutput>HotelDB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\CustomerDBModel.tt">
+    <Content Include="Models\HotelDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CustomerDBModel.edmx</DependentUpon>
-      <LastGenOutput>CustomerDBModel.cs</LastGenOutput>
+      <DependentUpon>HotelDB.edmx</DependentUpon>
+      <LastGenOutput>HotelDB.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -234,12 +234,12 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <EntityDeploy Include="Models\CustomerDBModel.edmx">
+    <EntityDeploy Include="Models\HotelDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CustomerDBModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>HotelDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\CustomerDBModel.edmx.diagram">
-      <DependentUpon>CustomerDBModel.edmx</DependentUpon>
+    <Content Include="Models\HotelDB.edmx.diagram">
+      <DependentUpon>HotelDB.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

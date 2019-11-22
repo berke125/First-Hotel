@@ -13,10 +13,10 @@ namespace HotelWebAPI.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CustomerDBModel : DbContext
+    public partial class HotelDB : DbContext
     {
-        public CustomerDBModel()
-            : base("name=CustomerDBModel")
+        public HotelDB()
+            : base("name=HotelDB")
         {
         }
     

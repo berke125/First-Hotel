@@ -14,7 +14,7 @@ namespace HotelWebAPI.Controllers
 {
     public class CustomerController : ApiController
     {
-        private CustomerDBModel db = new CustomerDBModel();
+        private HotelDB db = new HotelDB();
 
         // GET: api/Customer
         public IQueryable<Customer> GetCustomers()
@@ -22,15 +22,15 @@ namespace HotelWebAPI.Controllers
             return db.Customers;
         }
 
-    
+        
 
         // PUT: api/Customer/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutCustomer(string id, Customer customer)
+        public IHttpActionResult PutCustomer(int id, Customer customer)
         {
             
 
-            if (id != customer.Adı_Soyadı)
+            if (id != customer.Id)
             {
                 return BadRequest();
             }
@@ -65,15 +65,15 @@ namespace HotelWebAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.Customers.Add(customer);        
+            db.Customers.Add(customer);
             db.SaveChanges();
-           
-            return CreatedAtRoute("DefaultApi", new { id = customer.Adı_Soyadı }, customer);
+
+            return CreatedAtRoute("DefaultApi", new { id = customer.Id }, customer);
         }
 
         // DELETE: api/Customer/5
         [ResponseType(typeof(Customer))]
-        public IHttpActionResult DeleteCustomer(string id)
+        public IHttpActionResult DeleteCustomer(int id)
         {
             Customer customer = db.Customers.Find(id);
             if (customer == null)
@@ -96,9 +96,9 @@ namespace HotelWebAPI.Controllers
             base.Dispose(disposing);
         }
 
-        private bool CustomerExists(string id)
+        private bool CustomerExists(int id)
         {
-            return db.Customers.Count(e => e.Adı_Soyadı == id) > 0;
+            return db.Customers.Count(e => e.Id == id) > 0;
         }
     }
 }
