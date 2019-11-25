@@ -22,6 +22,15 @@ namespace HotelWebAPI.Controllers
             return db.Customers;
         }
 
+        //GET: api/Customer/{id}
+        public IHttpActionResult GetCustomersbyID(int id)
+        {
+            var arananID= db.Customers.FirstOrDefault(e => e.Id == id);
+            if (arananID == null)
+                return NotFound();
+            else
+                return Ok(arananID);
+        }
         
 
         // PUT: api/Customer/5
