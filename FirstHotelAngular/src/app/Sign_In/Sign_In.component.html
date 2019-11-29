@@ -31,13 +31,13 @@
     <div id="MainContent">
       <label>E-Posta:</label>
       <mat-form-field class="example-full-width">
-        <input name=email #email="ngModel" [(ngModel)]="email" matInput type="text" required>
+        <input name=aEmail #aEmail="ngModel" [(ngModel)]="email" matInput type="text" required>
         <div class="validation-error" *ngIf="email.invalid && email.touched">This field is required.</div>
       </mat-form-field>
       <br />
       <label>Şifre:</label>
       <mat-form-field class="example-full-width">
-        <input name=password #password="ngModel" [(ngModel)]="password" matInput type="text" required>
+        <input name=aPassword #aPassword="ngModel" [(ngModel)]="password" matInput type="password" required>
         <div class="validation-error" *ngIf="password.invalid && password.touched">This field is required.</div>
       </mat-form-field>
       <div class="example-button-row">
