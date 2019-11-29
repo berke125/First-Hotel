@@ -28,30 +28,30 @@
     color:red;
   }
 </style>
-<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off" class="example-form">
+<form #form="ngForm" autocomplete="off" class="example-form">
   <div class="center">
     <div id="MainContent">
 
       <label>Ad Soyad:</label>
       <mat-form-field class="example-full-width">
-        <input name="NameSurname" #NameSurname="ngModel" [(ngModel)]="service.formData.NameSurname" matInput type="text">
-        <div class="validation-error" *ngIf="NameSurname.invalid">This field is required.</div>
+        <input name="NameSurname" #NameSurname="ngModel" [(ngModel)]="service.formData.NameSurname" matInput type="text" required>
+        <div class="validation-error" *ngIf="NameSurname.invalid && NameSurname.touched">This field is required.</div>
       </mat-form-field>
       <br />
       <label>E-Posta:</label>
       <mat-form-field class="example-full-width">
-        <input name=Email #Email="ngModel"[(ngModel)]="service.formData.EMail" matInput type="text">
-        <div class="validation-error" *ngIf="Email.invalid">This field is required.</div>
+        <input name=Email #Email="ngModel"[(ngModel)]="service.formData.EMail" matInput type="text" required>
+        <div class="validation-error" *ngIf="Email.invalid && Email.touched">This field is required.</div>
       </mat-form-field>
       <br />
       <label>Şifre:</label>
       <mat-form-field class="example-full-width">
-        <input name=Password #Password="ngModel"[(ngModel)]="service.formData.Password" matInput type="text">
-        <div class="validation-error" *ngIf="Password.invalid">This field is required.</div>
+        <input name=Password #Password="ngModel"[(ngModel)]="service.formData.Password" matInput type="text" required>
+        <div class="validation-error" *ngIf="Password.invalid && Password.touched">This field is required.</div>
       </mat-form-field>
       <div class="example-button-row">
 
-        <button mat-raised-button  (click)="onSubmit()">Register</button>
+        <button mat-raised-button  (click)="onSubmit(form)">Register</button>
         <button mat-raised-button  routerLink="/Home">Cancel</button>
 
       </div>

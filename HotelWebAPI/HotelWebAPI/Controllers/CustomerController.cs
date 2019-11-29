@@ -30,8 +30,16 @@ namespace HotelWebAPI.Controllers
                 return NotFound();
             else
                 return Ok(arananID);
+
         }
-        
+        public Customer GetLogin(string email,string password)
+        {
+            var customer = db.Customers.FirstOrDefault(e => e.EMail == email && e.Password==password);
+            if(customer==null)
+                return new Customer {Id=0 };
+            else
+                return customer;
+        }
 
         // PUT: api/Customer/5
         [ResponseType(typeof(void))]
@@ -69,10 +77,7 @@ namespace HotelWebAPI.Controllers
         [ResponseType(typeof(Customer))]
         public IHttpActionResult PostCustomer(Customer customer)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+           
 
             db.Customers.Add(customer);
             db.SaveChanges();

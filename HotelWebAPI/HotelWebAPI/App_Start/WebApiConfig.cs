@@ -11,10 +11,9 @@ namespace HotelWebAPI
         public static void Register(HttpConfiguration config)
         {
             //Enable CORS
-            
+            config.EnableCors(new EnableCorsAttribute("http://localhost:4200", headers: "*", methods: "*"));
             // Web API yapılandırması ve hizmetleri
-            var cors = new EnableCorsAttribute("*", "*", "*"); // origins, headers, methods
-            config.EnableCors(cors);
+           
             // Web API yolları
             config.MapHttpAttributeRoutes();
 
