@@ -8,7 +8,7 @@ import { CustomerService } from './shared/customer.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  title='Holiday-Inn'
   opened: boolean = false;
   
   go() {

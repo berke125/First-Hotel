@@ -9,7 +9,6 @@
 
 <style>
 
-
   h1,
   h2,
   h3,
@@ -34,8 +33,6 @@
     flex: 1 1 auto;
   }
 
-
-
   .content {
     display: flex;
     margin: 32px auto;
@@ -55,8 +52,6 @@
     a:hover {
       color: #125699;
     }
-
-
 
   button {
     background-color: lightskyblue;
@@ -98,7 +93,6 @@
     background-color: #2A92BF;
   }
 
-
   mat-sidenav-container
   {
     height:100%;
@@ -127,7 +121,6 @@
   }
 </style>
 
-
 <mat-toolbar>
   <mat-toolbar-row>
     <button mat-icon-button>
@@ -135,6 +128,9 @@
     </button>
     <span style="color:cyan">Odeon</span>
     <span class="example-spacer"></span>
+    <h4 style="text-align:center">
+      Welcome to {{title}}
+    </h4>
     <div>
       <a mat-button  routerLink="/Home">Home Page</a>
       <a mat-button  routerLink="/Sign_In">Sign In</a>
@@ -166,8 +162,6 @@
     
 </mat-sidenav-container>
 
-
-  
   <!-- Footer -->
   <footer class="page-footer">
     <div class="footer-copyright text-center py-3">

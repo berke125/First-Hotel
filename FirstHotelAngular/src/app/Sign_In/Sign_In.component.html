@@ -24,7 +24,7 @@
   }
 </style>
 
-<form class="example-form">
+<form #form="ngForm" autocomplete="off" class="example-form">
 
 
   <div class="center">
@@ -42,7 +42,7 @@
       </mat-form-field>
       <div class="example-button-row">
 
-        <button mat-raised-button (click)="login()">Login</button>
+        <button mat-raised-button [disabled]="form.invalid" (click)="login()">Login</button>
         <button mat-raised-button routerLink="/Home">Cancel</button>
 
       </div>

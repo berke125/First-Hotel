@@ -11,12 +11,23 @@ export class CustomerService {
   formData: Customer;
   public rootURL = 'http://localhost:49725/api';
   constructor(private _http: HttpClient) { }
+ 
   Login(email, password)
   {
-
+   
     return this._http.get(this.rootURL + '/Customer?email=' + email + '&password=' + password);
-}
+  }
+
   PostCustomer(formData: Customer) {
     return this._http.post(this.rootURL + '/Customer', formData);
   }
+  PutCustomer(formData: Customer)
+  {
+    return this._http.put(this.rootURL + '/Customer' + formData.Id, formData);
+  }
+  DeleteCustomer(id: number)
+  {
+    return this._http.delete(this.rootURL + '/Customer' + id);
+  }
+
 }

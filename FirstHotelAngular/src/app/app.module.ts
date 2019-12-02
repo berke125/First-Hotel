@@ -14,13 +14,18 @@ import { MatMenuModule } from '@angular/material/menu';
 import { CustomerService } from './shared/customer.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import { WelcomeComponent } from './welcome/welcome.component';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     Sign_InComponent,
     Sign_UpComponent,
-    Hone_PageComponent
+    Hone_PageComponent,
+    WelcomeComponent
     
   ],
   imports: [
