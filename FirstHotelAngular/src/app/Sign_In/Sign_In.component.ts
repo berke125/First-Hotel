@@ -9,13 +9,15 @@ import { CustomerService } from '../shared/customer.service';
 export class Sign_InComponent {
   public email: string = '';
   public password: string = '';
-  constructor(private service: CustomerService) { }
+  constructor(private service: CustomerService, private router: Router) { }
   isLoggedin = false;
   login() {
     var login = this.service.Login(this.email, this.password).subscribe((customer: any) => {
       if (customer.Id > 0) {
-        alert('Başarıyla giriş yaptınız.' + customer.NameSurname);
+        localStorage.setItem(JSON.stringify(customer),"User");
         this.isLoggedin = true;
+        alert('Başarıyla giriş yaptınız.' + customer.NameSurname);
+        
       }
       else {
         this.isLoggedin = false;
