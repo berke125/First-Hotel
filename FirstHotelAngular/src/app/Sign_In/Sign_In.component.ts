@@ -14,10 +14,12 @@ export class Sign_InComponent {
   login() {
     var login = this.service.Login(this.email, this.password).subscribe((customer: any) => {
       if (customer.Id > 0) {
-        localStorage.setItem(JSON.stringify(customer),"User");
+        
         this.isLoggedin = true;
         alert('Başarıyla giriş yaptınız.' + customer.NameSurname);
-        
+        localStorage.setItem('User', JSON.stringify(customer));
+        this.service.USER = customer;
+        this.router.navigateByUrl('/Welcome');
       }
       else {
         this.isLoggedin = false;

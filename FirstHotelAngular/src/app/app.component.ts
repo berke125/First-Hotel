@@ -8,14 +8,19 @@ import { CustomerService } from './shared/customer.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title='Holiday-Inn'
+  title = 'Odeon'
+  title2 = JSON.parse(localStorage.getItem('User'));
   opened: boolean = false;
-  
+  constructor(public customerService: CustomerService) {}
   go() {
     if (this.opened)
       this.opened = false;
     else
       this.opened = true;
   }
- 
+  logout()
+  {
+    this.customerService.Logout()
+    this.title2.NameSurname = {};
+  }
 }

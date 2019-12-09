@@ -19,6 +19,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     Sign_UpComponent,
     Hone_PageComponent,
     WelcomeComponent
+  
     
   ],
   imports: [

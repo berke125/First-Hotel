@@ -128,13 +128,15 @@
     </button>
     <span style="color:cyan">Odeon</span>
     <span class="example-spacer"></span>
+
     <h4 style="text-align:center">
-      Welcome to {{title}}
+      Welcome to {{title}}, {{customerService.USER.NameSurname}}
     </h4>
     <div>
-      <a mat-button  routerLink="/Home">Home Page</a>
-      <a mat-button  routerLink="/Sign_In">Sign In</a>
-      <a mat-button  routerLink="/Sign_Up">Sign Up</a>
+      <a mat-button routerLink="/Home">Home Page</a>
+      <a mat-button *ngIf="!customerService.LoggedIn()" routerLink="/Sign_In">Sign In</a>
+      <a mat-button *ngIf="!customerService.LoggedIn()" routerLink="/Sign_Up">Sign Up</a>
+      <a mat-button *ngIf="customerService.LoggedIn()"routerLink="/Home" (click)="logout()">Logout</a>
     </div>
 
   </mat-toolbar-row>
@@ -152,6 +154,9 @@
       </li>
       <li>
         <a mat-button routerLink="/Sign_Up">Sign Up</a>
+      </li>
+      <li>
+        <a mat-button routerLink="/CustomerList">Customer</a>
       </li>
     </ul>
   </mat-sidenav>

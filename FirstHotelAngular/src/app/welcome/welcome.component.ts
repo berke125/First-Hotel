@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-
+  title = 'Odeon'
+  title2 = JSON.parse(localStorage.getItem('User'));
   constructor() { }
 
   ngOnInit() {
