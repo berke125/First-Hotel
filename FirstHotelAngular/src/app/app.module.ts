@@ -15,8 +15,7 @@ import { CustomerService } from './shared/customer.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { WelcomeComponent } from './welcome/welcome.component';
-
-
+import { CustomerListComponent } from './CustomerList/CustomerList.component';
 
 
 
@@ -26,8 +25,9 @@ import { WelcomeComponent } from './welcome/welcome.component';
     Sign_InComponent,
     Sign_UpComponent,
     Hone_PageComponent,
-    WelcomeComponent
-  
+    WelcomeComponent,
+    CustomerListComponent,
+
     
   ],
   imports: [

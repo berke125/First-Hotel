@@ -8,7 +8,7 @@ import { CustomerService } from './shared/customer.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Odeon'
+  title = 'Welcome to Odeon,'
   title2 = JSON.parse(localStorage.getItem('User'));
   opened: boolean = false;
   constructor(public customerService: CustomerService) {}

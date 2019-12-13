@@ -38,5 +38,8 @@ export class CustomerService {
   {
     return this._http.delete(this.rootURL + '/Customer' + id);
   }
-
+  GetCustomer()
+  {
+    return this._http.get(this.rootURL + '/Customer');
+  }
 }

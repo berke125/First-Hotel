@@ -130,12 +130,12 @@
     <span class="example-spacer"></span>
 
     <h4 style="text-align:center">
-      Welcome to {{title}}, {{customerService.USER.NameSurname}}
+      {{title}} {{customerService.USER.NameSurname}}
     </h4>
     <div>
       <a mat-button routerLink="/Home">Home Page</a>
       <a mat-button *ngIf="!customerService.LoggedIn()" routerLink="/Sign_In">Sign In</a>
-      <a mat-button *ngIf="!customerService.LoggedIn()" routerLink="/Sign_Up">Sign Up</a>
+      <a mat-button *ngIf="!customerService.LoggedIn()" routerLink="/Sign_Up/0">Sign Up</a>
       <a mat-button *ngIf="customerService.LoggedIn()"routerLink="/Home" (click)="logout()">Logout</a>
     </div>
 
@@ -149,14 +149,14 @@
       <li>
         <a mat-button routerLink="/Home">Home</a>
       </li>
-      <li>
+      <li *ngIf="!customerService.LoggedIn()">
         <a mat-button routerLink="/Sign_In">Sign In</a>
       </li>
-      <li>
-        <a mat-button routerLink="/Sign_Up">Sign Up</a>
+      <li *ngIf="!customerService.LoggedIn()">
+        <a mat-button routerLink="/Sign_Up/0">Sign Up</a>
       </li>
-      <li>
-        <a mat-button routerLink="/CustomerList">Customer</a>
+      <li *ngIf="customerService.LoggedIn()">
+        <a mat-button routerLink="/CustomerList" >Customer</a>
       </li>
     </ul>
   </mat-sidenav>
