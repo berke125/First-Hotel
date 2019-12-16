@@ -4,18 +4,22 @@ import { CustomerService } from '../shared/customer.service';
 import { NgForm, FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Customer } from '../shared/customer.model';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'Sign_Up-root',
   templateUrl: './Sign_Up.component.html'
 })
 export class Sign_UpComponent implements OnInit {
-
-  constructor(private service: CustomerService,
-    private toastr: ToastrService) { }
+  custId: number;
+  constructor(private service: CustomerService, private toastr: ToastrService, private route: ActivatedRoute, http: HttpClient, private router:Router)
+  {
+   
+  }
 
   ngOnInit() {
     this.resetForm();
+    this.custId = this.route.snapshot.params.customerId;
+    this.service.GetCustomerById(this.custId);
   }
 
   resetForm(form?: NgForm) {
@@ -30,12 +34,24 @@ export class Sign_UpComponent implements OnInit {
       }
   }
   onSubmit(form: NgForm) {
-    this.insertRecord(form);
+    if (this.custId == null) {
+      this.service.PostCustomer(form.value).subscribe(data => {
+        this.resetForm(form);
+        this.service.GetCustomer();
+        this.toastr.success('Inserted successfully.');
+      })
+    }
+    else
+    {
+      this.service.PutCustomer(this.service.formData).subscribe(data =>
+      {
+        this.resetForm(form);
+        this.service.GetCustomer();
+        this.toastr.warning('Update successfully.');
+        this.router.navigate(['/CustomerList']);
+      })
+    }
+ 
   }
-  insertRecord(form: NgForm) {
-    this.service.PostCustomer(form.value).subscribe(res => {
-      this.toastr.success('Inserted successfullly', 'Registered');
-      this.resetForm(form);
-    });
-  }
+
 }
