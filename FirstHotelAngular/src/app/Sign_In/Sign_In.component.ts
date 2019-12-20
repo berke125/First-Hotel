@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from '../shared/customer.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'Sign_In-root',
@@ -19,6 +20,7 @@ export class Sign_InComponent {
         alert('Başarıyla giriş yaptınız.' + customer.NameSurname);
         localStorage.setItem('User', JSON.stringify(customer));
         this.service.USER = customer;
+        location.reload();
         this.router.navigateByUrl('/Welcome');
       }
       else {

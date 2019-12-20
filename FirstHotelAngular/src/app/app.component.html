@@ -129,8 +129,8 @@
     <span style="color:cyan">Odeon</span>
     <span class="example-spacer"></span>
 
-    <h4 style="text-align:center">
-      {{title}} {{customerService.USER.NameSurname}}
+    <h4 style="text-align:center" *ngIf="title2!=''" >
+      {{title}} {{title2.NameSurname}}
     </h4>
     <div>
       <a mat-button routerLink="/Home">Home Page</a>
