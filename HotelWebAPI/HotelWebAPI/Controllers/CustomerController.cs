@@ -27,7 +27,7 @@ namespace HotelWebAPI.Controllers
         {
             var arananID= db.Customers.FirstOrDefault(e => e.Id == id);
             if (arananID == null)
-                return NotFound();
+                return Ok(new Customer());
             else
                 return Ok(arananID);
 
@@ -77,9 +77,15 @@ namespace HotelWebAPI.Controllers
         [ResponseType(typeof(Customer))]
         public IHttpActionResult PostCustomer(Customer customer)
         {
-           
 
+            if (customer.EMail!=null)
+            {
+                Conflict();
+
+            }
+            else
             db.Customers.Add(customer);
+            
             db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = customer.Id }, customer);
