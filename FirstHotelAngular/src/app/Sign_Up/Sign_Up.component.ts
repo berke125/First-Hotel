@@ -36,9 +36,11 @@ export class Sign_UpComponent implements OnInit {
   onSubmit(form: NgForm) {
     if (this.custId == null || this.custId==0) {
       this.service.PostCustomer(form.value).subscribe(data => {
+
         this.resetForm(form);
         this.service.GetCustomer();
         this.toastr.success('Inserted successfully.');
+        
       })
     }
     else

@@ -30,11 +30,13 @@ export class CustomerService {
     this.router.navigateByUrl('/Home')
   }
   PostCustomer(formData: Customer) {
-    return this._http.post(this.rootURL + '/Customer', formData);
+    
+      return this._http.post(this.rootURL + '/Customer', formData);
+    
   }
   PutCustomer(formData: Customer)
-  {
-    return this._http.put(this.rootURL + '/Customer/' + formData.Id, formData);
+  {   
+      return this._http.put(this.rootURL + '/Customer/' + formData.Id, formData);      
   }
   DeleteCustomer(id: number)
   {
@@ -55,4 +57,5 @@ export class CustomerService {
   {
     this._http.get(this.rootURL + '/Customer').toPromise().then(res => this.customerList = res as Customer[]);
   }
+
 }

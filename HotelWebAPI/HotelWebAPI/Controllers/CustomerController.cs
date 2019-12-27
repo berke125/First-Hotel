@@ -9,13 +9,15 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using HotelWebAPI.Models;
+using System.Web.Mvc;
+using System.Web;
 
 namespace HotelWebAPI.Controllers
 {
     public class CustomerController : ApiController
     {
         private HotelDB db = new HotelDB();
-
+ 
         // GET: api/Customer
         public IQueryable<Customer> GetCustomers()
         {
@@ -25,18 +27,28 @@ namespace HotelWebAPI.Controllers
         //GET: api/Customer/{id}
         public IHttpActionResult GetCustomersbyID(int id)
         {
-            var arananID= db.Customers.FirstOrDefault(e => e.Id == id);
+            var arananID = db.Customers.FirstOrDefault(e => e.Id == id);
             if (arananID == null)
                 return Ok(new Customer());
             else
                 return Ok(arananID);
 
         }
-        public Customer GetLogin(string email,string password)
+
+        public IHttpActionResult GetCustomersbyEMail(string email)
         {
-            var customer = db.Customers.FirstOrDefault(e => e.EMail == email && e.Password==password);
-            if(customer==null)
-                return new Customer {Id=0 };
+            var arananEMail = db.Customers.FirstOrDefault(e => e.EMail == email);
+            if (arananEMail == null)
+                return Ok(new Customer());
+            else
+                return Ok(arananEMail);
+
+        }
+        public Customer GetLogin(string email, string password)
+        {
+            var customer = db.Customers.FirstOrDefault(e => e.EMail == email && e.Password == password);
+            if (customer == null)
+                return new Customer { Id = 0 };
             else
                 return customer;
         }
@@ -45,7 +57,7 @@ namespace HotelWebAPI.Controllers
         [ResponseType(typeof(void))]
         public IHttpActionResult PutCustomer(int id, Customer customer)
         {
-            
+
 
             if (id != customer.Id)
             {
@@ -77,17 +89,19 @@ namespace HotelWebAPI.Controllers
         [ResponseType(typeof(Customer))]
         public IHttpActionResult PostCustomer(Customer customer)
         {
-
-            if (customer.EMail!=null)
+            Customer old = new Customer();
+            
+            GetCustomersbyEMail(old.EMail);
+            if (old.EMail == null)
             {
-                Conflict();
-
+                db.Customers.Add(customer);
+                db.SaveChanges();
             }
             else
-            db.Customers.Add(customer);
+            {
+                Console.WriteLine("Bu kayıt zaten var.");
+            }
             
-            db.SaveChanges();
-
             return CreatedAtRoute("DefaultApi", new { id = customer.Id }, customer);
         }
 
