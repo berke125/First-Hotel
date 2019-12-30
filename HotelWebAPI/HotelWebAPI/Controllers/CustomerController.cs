@@ -35,13 +35,16 @@ namespace HotelWebAPI.Controllers
 
         }
 
-        public IHttpActionResult GetCustomersbyEMail(string email)
+        public Customer GetCustomersbyEMail(string email)
         {
-            var arananEMail = db.Customers.FirstOrDefault(e => e.EMail == email);
-            if (arananEMail == null)
-                return Ok(new Customer());
-            else
-                return Ok(arananEMail);
+            try
+            {
+                return db.Customers.FirstOrDefault(e => e.EMail == email);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
 
         }
         public Customer GetLogin(string email, string password)
@@ -89,17 +92,13 @@ namespace HotelWebAPI.Controllers
         [ResponseType(typeof(Customer))]
         public IHttpActionResult PostCustomer(Customer customer)
         {
-            Customer old = new Customer();
+            Customer old = null;
+            old=GetCustomersbyEMail(customer.EMail);
             
-            GetCustomersbyEMail(old.EMail);
-            if (old.EMail == null)
-            {
+            if (old==null)
+            {          
                 db.Customers.Add(customer);
                 db.SaveChanges();
-            }
-            else
-            {
-                Console.WriteLine("Bu kayıt zaten var.");
             }
             
             return CreatedAtRoute("DefaultApi", new { id = customer.Id }, customer);

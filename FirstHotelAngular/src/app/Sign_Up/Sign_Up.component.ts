@@ -11,9 +11,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class Sign_UpComponent implements OnInit {
   custId: number;
-  constructor(private service: CustomerService, private toastr: ToastrService, private route: ActivatedRoute, http: HttpClient, private router:Router)
-  {
-   
+  constructor(private service: CustomerService, private toastr: ToastrService, private route: ActivatedRoute, http: HttpClient, private router: Router) {
+
   }
 
   ngOnInit() {
@@ -34,26 +33,28 @@ export class Sign_UpComponent implements OnInit {
       }
   }
   onSubmit(form: NgForm) {
-    if (this.custId == null || this.custId==0) {
-      this.service.PostCustomer(form.value).subscribe(data => {
+    if (this.custId == null || this.custId == 0) {
+      this.service.PostCustomer(form.value).subscribe((data: any) => {
+        if (data.Id > 0) {
+          this.resetForm(form);
+          this.service.GetCustomer();
+          this.toastr.success('Inserted successfully.');
+        }
+        else {
+          this.toastr.warning('Bu kayıt zaten var.');
+        }
 
-        this.resetForm(form);
-        this.service.GetCustomer();
-        this.toastr.success('Inserted successfully.');
-        
       })
     }
-    else
-    {
-      this.service.PutCustomer(this.service.formData).subscribe(data =>
-      {
+    else {
+      this.service.PutCustomer(this.service.formData).subscribe(data => {
         this.resetForm(form);
         this.service.GetCustomer();
         this.toastr.warning('Update successfully.');
         this.router.navigate(['/CustomerList']);
       })
     }
- 
+
   }
 
 }
