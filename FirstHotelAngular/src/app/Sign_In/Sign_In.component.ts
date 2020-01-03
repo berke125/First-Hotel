@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from '../shared/customer.service';
 import { Location } from '@angular/common';
-
+import { NgForm, FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 @Component({
   selector: 'Sign_In-root',
   templateUrl: './Sign_In.component.html'
@@ -35,4 +35,5 @@ export class Sign_InComponent {
 
 
   }
+
 }

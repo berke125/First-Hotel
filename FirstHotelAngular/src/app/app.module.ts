@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { CustomerListComponent } from './CustomerList/CustomerList.component';
-
+import { ForgottenPasswordComponent } from './Forgotten_Password/Forgotten_Password.component';
 
 
 @NgModule({
@@ -27,8 +27,8 @@ import { CustomerListComponent } from './CustomerList/CustomerList.component';
     Hone_PageComponent,
     WelcomeComponent,
     CustomerListComponent,
-
-    
+    ForgottenPasswordComponent
+ 
   ],
   imports: [
     BrowserModule,

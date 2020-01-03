@@ -53,6 +53,11 @@ export class CustomerService {
       this.formData = data as Customer;
     })
   }
+  GetCustomerByEMail(email: string) {
+    this._http.get(this.rootURL + '/Customer/' + email).subscribe(data => {
+      this.formData = data as Customer;
+    })
+  }
   refresh()
   {
     this._http.get(this.rootURL + '/Customer').toPromise().then(res => this.customerList = res as Customer[]);

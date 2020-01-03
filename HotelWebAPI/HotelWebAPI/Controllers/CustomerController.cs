@@ -19,19 +19,19 @@ namespace HotelWebAPI.Controllers
         private HotelDB db = new HotelDB();
  
         // GET: api/Customer
-        public IQueryable<Customer> GetCustomers()
+        public List<Customer> GetCustomers()
         {
-            return db.Customers;
+            return db.Customers.ToList();
         }
 
         //GET: api/Customer/{id}
-        public IHttpActionResult GetCustomersbyID(int id)
+        public Customer GetCustomersbyID(int id)
         {
             var arananID = db.Customers.FirstOrDefault(e => e.Id == id);
             if (arananID == null)
-                return Ok(new Customer());
+                return new Customer();
             else
-                return Ok(arananID);
+                return arananID;
 
         }
 
