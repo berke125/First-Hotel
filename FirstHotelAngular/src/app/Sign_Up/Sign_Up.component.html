@@ -20,12 +20,16 @@
     font-family: Tahoma;
     color: ivory;
   }
-  .validation-error
-  {
-    width:100%;
+
+  .validation-error {
+    width: 100%;
     margin-top: .25rem;
-    font-size:80%;
-    color:red;
+    font-size: 80%;
+    color: red;
+  }
+
+  .spacer {
+    margin-bottom: 20px;
   }
 </style>
 <form #form="ngForm" autocomplete="off" class="example-form">
@@ -40,19 +44,20 @@
       <br />
       <label>E-Posta:</label>
       <mat-form-field class="example-full-width">
-        <input name=Email #Email="ngModel"[(ngModel)]="service.formData.EMail" matInput type="text" required>
+        <input name=Email #Email="ngModel" [(ngModel)]="service.formData.EMail" matInput type="text" required>
         <div class="validation-error" *ngIf="Email.invalid && Email.touched">This field is required.</div>
       </mat-form-field>
       <br />
       <label>Şifre:</label>
       <mat-form-field class="example-full-width">
-        <input name=Password #Password="ngModel"[(ngModel)]="service.formData.Password" matInput type="text" required>
+        <input name=Password #Password="ngModel" [(ngModel)]="service.formData.Password" matInput type="text" required>
         <div class="validation-error" *ngIf="Password.invalid && Password.touched">This field is required.</div>
       </mat-form-field>
+      <div class="spacer"></div>
       <div class="example-button-row">
 
-        <button mat-raised-button [disabled]="form.invalid"  (click)="onSubmit(form)">Register</button>
-        <button mat-raised-button  routerLink="/Home">Cancel</button>
+        <button mat-raised-button [disabled]="form.invalid" (click)="onSubmit(form)">Save</button>
+        <button mat-raised-button routerLink="/Home">Cancel</button>
 
       </div>
     </div>

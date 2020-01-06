@@ -6,6 +6,7 @@ import { Hone_PageComponent } from './Home_Page/Home_Page.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { CustomerListComponent } from './CustomerList/CustomerList.component';
 import { ForgottenPasswordComponent } from './Forgotten_Password/Forgotten_Password.component';
+import { ChangePasswordComponent } from './Change_Password/Change_Password.component';
 
 
 
@@ -16,7 +17,7 @@ const routes: Routes = [
   { path: "Home", component: Hone_PageComponent },
   { path: "CustomerList", component: CustomerListComponent },
   { path: "Forgotten_Password", component: ForgottenPasswordComponent },
-
+  { path: "Change_Password", component: ChangePasswordComponent },
 
   { path: 'Welcome', component: WelcomeComponent },
 
@@ -28,6 +29,6 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 
-export class AppRoutingModule { } 
+export class AppRoutingModule { }
 
 

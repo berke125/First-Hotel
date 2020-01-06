@@ -12,6 +12,10 @@
     align-items: center;
   }
 
+  .spacer {
+    margin-bottom: 20px;
+  }
+
   .mat-raised-button {
     background-color: firebrick;
     font-style: normal;
@@ -26,6 +30,11 @@
     font-size: 80%;
     color: red;
   }
+
+  .button {
+    margin-left: 0px;
+    font-weight: 500;
+  }
 </style>
 <form #form="ngForm" autocomplete="off" class="example-form">
   <div class="center">
@@ -35,7 +44,7 @@
         <input name=aEmail #aEmail="ngModel" [(ngModel)]="email" matInput type="text" required>
         <div class="validation-error" *ngIf="aEmail.invalid && (aEmail.dirty || aEmail.touched)">
           This field is required.
-        
+
         </div>
       </mat-form-field>
       <br />
@@ -45,7 +54,8 @@
         <div class="validation-error" *ngIf="aPassword.invalid && aPassword.touched">This field is required.</div>
       </mat-form-field>
       <br />
-      <button mat-button routerLink="/Forgotten_Password">Forgot your password?</button>
+      <button class="button" mat-button routerLink="/Forgotten_Password">Forgot your password?</button>
+      <div class="spacer"></div>
       <div class="example-button-row">
         <button mat-raised-button [disabled]="form.invalid" (click)="login()">Login</button>
         <button mat-raised-button routerLink="/Home">Cancel</button>

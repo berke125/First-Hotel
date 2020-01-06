@@ -15,7 +15,7 @@ export class Sign_InComponent {
   login() {
     var login = this.service.Login(this.email, this.password).subscribe((customer: any) => {
       if (customer.Id > 0) {
-        
+
         this.isLoggedin = true;
         alert('Başarıyla giriş yaptınız.' + customer.NameSurname);
         localStorage.setItem('User', JSON.stringify(customer));

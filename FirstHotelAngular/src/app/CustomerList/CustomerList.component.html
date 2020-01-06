@@ -5,11 +5,13 @@
     padding-left: 200px;
     margin: 0px;
   }
+
   .center {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   button {
     background-color: lightskyblue;
     font-style: normal;
@@ -17,6 +19,7 @@
     font-family: Tahoma;
     color: brown;
   }
+
   mark {
     background-color: darkblue;
     color: coral;
@@ -28,14 +31,14 @@
       <p>CustomerList works.</p>
       <table class="table">
         <thead>
-          <tr>           
+          <tr>
             <th>NameSurname</th>
             <th>Email</th>
             <th>Password</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let customer of customers">           
+          <tr *ngFor="let customer of customers">
             <th>{{customer.NameSurname}}</th>
             <th>{{customer.EMail}}</th>
             <th>{{customer.Password}}</th>
@@ -48,7 +51,7 @@
   </div>
 </form>
 
-  
+
 
 
 

@@ -11,9 +11,8 @@ import { ToastrService } from 'ngx-toastr';
 export class CustomerListComponent implements OnInit {
   cusId: number;
   customers: any;
-  constructor(private service: CustomerService, http: HttpClient, private toastr: ToastrService)
-  {
-    
+  constructor(private service: CustomerService, http: HttpClient, private toastr: ToastrService) {
+
   }
   refreshList() {
     let resp = this.service.GetCustomer();
@@ -27,11 +26,11 @@ export class CustomerListComponent implements OnInit {
       this.service.DeleteCustomer(id).subscribe(x => {
         this.refreshList();
         this.toastr.warning("Deleted Successfully");
-        
-        
+
+
       })
     }
   }
-  
+
 
 }

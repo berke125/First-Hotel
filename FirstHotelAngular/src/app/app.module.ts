@@ -17,6 +17,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { CustomerListComponent } from './CustomerList/CustomerList.component';
 import { ForgottenPasswordComponent } from './Forgotten_Password/Forgotten_Password.component';
+import { ChangePasswordComponent } from './Change_Password/Change_Password.component';
 
 
 @NgModule({
@@ -27,8 +28,10 @@ import { ForgottenPasswordComponent } from './Forgotten_Password/Forgotten_Passw
     Hone_PageComponent,
     WelcomeComponent,
     CustomerListComponent,
-    ForgottenPasswordComponent
- 
+    ForgottenPasswordComponent,
+    ChangePasswordComponent
+
+
   ],
   imports: [
     BrowserModule,

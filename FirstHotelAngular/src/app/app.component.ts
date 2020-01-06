@@ -6,11 +6,13 @@ import { isNullOrUndefined } from 'util';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-
+  styleUrls: ['./app.component.css'],
+  
 })
 export class AppComponent implements OnInit {
-  title = 'Welcome to Odeon,'
+  myDate = Date.now();
+  
+  title = 'Welcome to Odeon'
   title2:any  = {
     'Id': 0,
     'NameSurname': '',
@@ -22,6 +24,7 @@ export class AppComponent implements OnInit {
   constructor(public customerService: CustomerService) { }
   ngOnInit()
   {
+    
     if ((isNullOrUndefined(localStorage.getItem('User'))) == true)
       this.title2 = {
         'Id': 0,
