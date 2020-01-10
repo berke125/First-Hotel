@@ -31,7 +31,11 @@
   }
 
   .example-spacer {
-    flex: 1 1;
+    flex: 0.4;
+  }
+
+  .example-spacer2 {
+    flex: 0.6;
   }
 
   .content {
@@ -100,7 +104,7 @@
   }
 
   mat-sidenav {
-    width: 200px;
+    width: 240px;
     background-color: blue;
   }
 
@@ -132,14 +136,15 @@
     <span style="color:cyan">Odeon</span>
     <div class="spacer"></div>
     <div>
-      {{myDate | date:'mediumDate'}}
-      {{myDate | date:'mediumTime'}}
+      {{myDate | date:'dd MMMM yyyy'}}
+      {{mydate2 | date: ' HH:mm:ss'}}
     </div>
-    <span class="example-spacer"></span>
 
+    <span class="example-spacer"></span>
     <h4 style="text-align:center" *ngIf="title2!=''">
       {{title}} {{title2.NameSurname}}
     </h4>
+    <span class="example-spacer2"></span>
     <div>
       <a mat-button routerLink="/Home">Home Page</a>
       <a mat-button *ngIf="!customerService.LoggedIn()" routerLink="/Sign_In">Sign In</a>
@@ -167,6 +172,12 @@
       <li *ngIf="customerService.LoggedIn()">
         <a mat-button routerLink="/CustomerList">Customer</a>
       </li>
+      <li *ngIf="customerService.LoggedIn()">
+        <a mat-button>Reservations</a>
+      </li>
+      <li *ngIf="customerService.LoggedIn()">
+        <a mat-button>Room Status </a>
+      </li>
     </ul>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -179,7 +190,7 @@
 <!-- Footer -->
 <footer class="page-footer">
   <div class="footer-copyright text-center py-3">
-    2020 Odeon: A Hotel Page
+    {{myDate | date:'yyyy'}} Odeon: A Hotel Page
   </div>
 </footer>
 <!-- Footer -->

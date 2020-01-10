@@ -54,7 +54,9 @@ D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\Microsoft.CodeDom.Providers.DotN
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\Microsoft.Web.Infrastructure.dll
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\Newtonsoft.Json.dll
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\System.Net.Http.Formatting.dll
+D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\System.Web.Cors.dll
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\System.Web.Helpers.dll
+D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\System.Web.Http.Cors.dll
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\System.Web.Http.dll
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\System.Web.Http.WebHost.dll
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\System.Web.Mvc.dll
@@ -68,8 +70,9 @@ D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\EntityFramework.xml
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\EntityFramework.SqlServer.xml
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\Newtonsoft.Json.xml
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\System.Net.Http.Formatting.xml
-D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\System.Web.Helpers.xml
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\System.Web.Http.xml
+D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\System.Web.Http.Cors.xml
+D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\System.Web.Helpers.xml
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\System.Web.Http.WebHost.xml
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\System.Web.Mvc.xml
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\System.Web.Optimization.xml
@@ -80,8 +83,8 @@ D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\System.Web.WebPages.Razor.xml
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\Antlr3.Runtime.pdb
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\tr\System.Net.Http.Formatting.resources.dll
-D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\tr\System.Web.Helpers.resources.dll
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\tr\System.Web.Http.resources.dll
+D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\tr\System.Web.Helpers.resources.dll
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\tr\System.Web.Http.WebHost.resources.dll
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\tr\System.Web.Mvc.resources.dll
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\tr\System.Web.Optimization.resources.dll
@@ -94,6 +97,3 @@ D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\obj\Debug\HotelWebAPI.csproj.CoreCom
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\obj\Debug\HotelWebAPI.csproj.CopyComplete
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\obj\Debug\HotelWebAPI.dll
 D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\obj\Debug\HotelWebAPI.pdb
-D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\System.Web.Cors.dll
-D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\System.Web.Http.Cors.dll
-D:\WORK\First Hotel\HotelWebAPI\HotelWebAPI\bin\System.Web.Http.Cors.xml

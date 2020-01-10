@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CustomerService } from './shared/customer.service';
 import { isNullOrUndefined } from 'util';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ import { isNullOrUndefined } from 'util';
 })
 export class AppComponent implements OnInit {
   myDate = Date.now();
-  
+  mydate2: Date;
   title = 'Welcome to Odeon'
   title2:any  = {
     'Id': 0,
@@ -33,9 +34,18 @@ export class AppComponent implements OnInit {
         'Password': ''
       };
     else
-      this.title2=JSON.parse(localStorage.getItem('User'));
-   
+      this.title2 = JSON.parse(localStorage.getItem('User'));
+    this.timer();
   }
+  
+  timer()
+  {
+    setInterval(() => {
+      this.mydate2 = new Date();
+      console.log(this.mydate2);
+    }, 1000);
+  }
+
   go() {
     if (this.opened)
       this.opened = false;
